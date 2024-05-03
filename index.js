@@ -5,24 +5,53 @@ mongoose.connect("mongodb://localhost/playground")
     .catch(error => console.error("Could not connect to MongoDB... ", error.message));
 
 const courseSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        minlength: 5,
+        maxlength: 255,
+    },
+    category: {
+        type: String,
+        required: true,
+        enum: ["web", "mobile", "network"],
+        lowercase: true,
+        trim: true
+    },
     author: String,
-    tags: [String],
+    tags: {
+        type: Array,
+        validate: {
+            validator: function (v) {
+                return v && v.length > 0;
+            },
+            message: "A course should have at least one tag."
+        }
+    },
     date: {type: Date, default: Date.now},
-    isPublished: Boolean
+    isPublished: Boolean,
+    price: {
+        type: Number,
+        required: function () {
+            return this.isPublished
+        },
+        min: 10,
+        max: 200,
+        get: v => Math.round(v),
+        set: v => Math.round(v)
+    }
 });
 const Course = mongoose.model("Course", courseSchema);
 
-async function createCourse() {
-    const course = new Course({
-        name: "Angular Course",
-        author: "Nate",
-        tags: ["angular", "frontend"],
-        isPublished: true
-    });
-
-    const result = await course.save();
-    console.log(result);
+async function createCourse(data) {
+    const course = new Course(data);
+    try {
+        const result = await course.save();
+        console.log(result);
+    } catch (error) {
+        for (let feild in error.errors) console.log(error.errors[feild].message);
+        console.log(error.message);
+    }
 }
 
 async function getAllCourses() {
@@ -43,13 +72,21 @@ async function updateCourse(id, update) {
     const course = await Course.findById(id);
     if (!course) return;
     course.set(update);
-    const result = await course.save();
-    console.log(result);
+    try {
+        const result = await course.save();
+        console.log(result);
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 async function deleteCourse(id) {
-    const result = await Course.deleteOne({_id: id});
-    console.log(result);
+    try {
+        const result = await Course.deleteOne({_id: id});
+        console.log(result);
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 // comparison query
@@ -77,12 +114,3 @@ async function deleteCourse(id) {
 // /^pattern/
 // /pattern$/
 // /.*pattern.*/
-
-const filter = {author: "Nate"};
-const limit = 10;
-// assending order: 1
-// desending order: -1
-const sort = {name: 1};
-const select = {name: 1, tags: 1};
-getCourses(filter, limit, sort, select);
-
