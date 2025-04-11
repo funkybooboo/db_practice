@@ -1,31 +1,30 @@
+-- Switch to the `sql_store` database to run the following queries on its tables
 USE sql_store;
 
- SELECT
+-- Select all customers who have between 1000 and 3000 points using explicit conditions
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	points >= 1000
  	AND points <= 3000;
 
- SELECT
+
+-- Select all customers who have between 1000 and 3000 points using the BETWEEN operator (inclusive)
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	points BETWEEN 1000 AND 3000;
 
--- Return customers born between 1/1/1990 and 1/1/2000
+
+-- Select all customers who were born between January 1, 1990 and January 1, 2000 (inclusive)
 SELECT
 	*
 FROM
 	customers
 WHERE
 	birth_date BETWEEN '1990-01-01' AND '2000-01-01';
-
-
-
-
-
-
 

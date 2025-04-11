@@ -1,3 +1,6 @@
+-- Get order details along with:
+-- - customer name
+-- - order status (joined from order_statuses)
 SELECT
 	o.order_id,
 	o.order_date,
@@ -6,33 +9,28 @@ SELECT
 	os.name AS status
 FROM
 	sql_store.orders o
-JOIN sql_store.customers c ON
-	o.customer_id = c.customer_id
-JOIN sql_store.order_statuses os ON
-	os.order_status_id = o.status;
+JOIN sql_store.customers c 
+	ON o.customer_id = c.customer_id
+JOIN sql_store.order_statuses os 
+	ON os.order_status_id = o.status;
 
+-- Get payment details along with:
+-- - invoice number
+-- - amount
+-- - client name
+-- - payment method name
 SELECT
 	p.date,
-	i.number AS invoid_number,
+	i.number AS invoice_number,
 	p.amount,
 	c.name,
 	pm.name AS payment_method
 FROM
 	sql_invoicing.payments p
-JOIN sql_invoicing.payment_methods pm ON
-	p.payment_method = pm.payment_method_id
-JOIN sql_invoicing.clients c ON
-	p.client_id = c.client_id
-JOIN sql_invoicing.invoices i ON
-	p.invoice_id = i.invoice_id;
-	
-
-
-
-
-
-
-
-
-
+JOIN sql_invoicing.payment_methods pm 
+	ON p.payment_method = pm.payment_method_id
+JOIN sql_invoicing.clients c 
+	ON p.client_id = c.client_id
+JOIN sql_invoicing.invoices i 
+	ON p.invoice_id = i.invoice_id;
 

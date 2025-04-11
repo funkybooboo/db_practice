@@ -1,21 +1,24 @@
+-- Use the sql_store database for the following queries
 USE sql_store;
 
- SELECT
+-- Get all customers who do NOT have a phone number (i.e., phone is NULL)
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	phone IS NULL;
- 
- SELECT
+
+-- Get all customers who DO have a phone number (i.e., phone is NOT NULL)
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	phone IS NOT NULL;
 
-
--- Get the orders that have not shipped yet
+-- Get all orders that have NOT been shipped yet
+-- This means the shipped_date is still NULL (not set)
 SELECT
 	*
 FROM

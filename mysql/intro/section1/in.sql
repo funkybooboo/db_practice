@@ -1,36 +1,39 @@
+-- Use the sql_store database for the following queries
 USE sql_store;
 
- SELECT
+-- Get all customers whose state is either VA, GA, or FL using multiple OR conditions
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	state = 'VA'
  	OR state = 'GA'
  	OR state = 'FL';
 
- SELECT
+-- Same as above, but using the more concise IN operator
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	state IN ('VA', 'FL', 'GA');
 
- SELECT
+-- Get all customers whose state is NOT VA, FL, or GA
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	state NOT IN ('VA', 'FL', 'GA');
 
--- Return products with quantity in stock equal to 49, 38, 72
+-- Get all products that have exactly 49, 38, or 72 units in stock
 SELECT
 	*
 FROM 
 	products
 WHERE 
 	quantity_in_stock IN (49, 38, 72);
-
 
 
 

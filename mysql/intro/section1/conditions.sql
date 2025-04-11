@@ -1,41 +1,48 @@
+-- Use the sql_store database for the following queries
 USE sql_store;
 
- SELECT
+-- Get all customers born after Jan 1, 1990 AND with more than 1000 points
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	birth_date > '1990-01-01'
  	AND points > 1000;
 
- SELECT
+-- Get all customers who were either born after Jan 1, 1990
+-- OR have more than 1000 points AND live in the state of Virginia (VA)
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE
+WHERE
  	birth_date > '1990-01-01'
  	OR (points > 1000
  		AND state = 'VA');
 
- SELECT
+-- Get all customers who were NOT born after Jan 1, 1990
+-- AND do NOT have more than 1000 points
+-- This is equivalent to customers born on or before Jan 1, 1990 AND with 1000 or fewer points
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE NOT (
+WHERE NOT (
  	birth_date > '1990-01-01'
  	OR points > 1000);
 
- SELECT
+-- Same as the previous query but written directly using AND instead of NOT
+SELECT
  	*
- FROM
+FROM
  	customers
- WHERE 
+WHERE 
  	birth_date <= '1990-01-01'
  	AND points <= 1000;
 
--- From the order_items table, get the items
---	for order number 6
---	where the total price is greater than 30
+-- Get all items in order #6 from the order_items table
+-- Only include items where the total price (quantity × unit price) is greater than 30
 SELECT
 	*
 FROM
@@ -43,8 +50,6 @@ FROM
 WHERE 
 	order_id = 6
 	AND quantity * unit_price > 30;
-
-
 
 
 
