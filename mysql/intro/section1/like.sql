@@ -1,18 +1,18 @@
 USE sql_store;
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name LIKE 'b%'; -- % any number of characters
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name LIKE 'b%'; -- % any number of characters
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name LIKE '_____y'; -- _ one character
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name LIKE '_____y'; -- _ one character
 
 -- Get the customers whose addresses contain TRAIL or AVENUE 
 SELECT

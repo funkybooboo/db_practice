@@ -1,36 +1,36 @@
 USE sql_store;
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name REGEXP 'field';
--- 	-- last_name LIKE '%field%'; -- same as above
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name REGEXP 'field';
+ 	-- last_name LIKE '%field%'; -- same as above
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name REGEXP 'field$|mac|^rose';
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name REGEXP 'field$|mac|^rose';
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name REGEXP '[gim]e';
--- -- ge
--- -- ie
--- -- me
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name REGEXP '[gim]e';
+ -- ge
+ -- ie
+ -- me
 
--- SELECT
--- 	*
--- FROM
--- 	customers
--- WHERE
--- 	last_name REGEXP '[a-h]e';
+ SELECT
+ 	*
+ FROM
+ 	customers
+ WHERE
+ 	last_name REGEXP '[a-h]e';
 
 -- ^ beginning
 -- $ end
