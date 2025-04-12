@@ -36,41 +36,45 @@ WHERE
 -- Using Subquery:
 -- Select customers whose orders contain an order item with product_id = 3
 SELECT
-    c.customer_id,
-    c.first_name,
-    c.last_name
+	c.customer_id,
+	c.first_name,
+	c.last_name
 FROM
-    sql_store.customers c
+	sql_store.customers c
 WHERE
-    c.customer_id IN (
-        SELECT
-            o.customer_id
-        FROM
-            sql_store.orders o
-        WHERE
-            o.order_id IN (
-                SELECT
-                    oi.order_id
-                FROM
-                    sql_store.order_items oi
-                WHERE
-                    oi.product_id = 3
+	c.customer_id IN (
+	SELECT
+		o.customer_id
+	FROM
+		sql_store.orders o
+	WHERE
+		o.order_id IN (
+		SELECT
+			oi.order_id
+		FROM
+			sql_store.order_items oi
+		WHERE
+			oi.product_id = 3
             )
-    );
+    )
+ORDER BY
+	customer_id;
 
 -- Using JOIN:
 -- Join through orders -> order_items -> products, and filter by product_id = 3
 SELECT
-    c.customer_id,
-    c.first_name,
-    c.last_name
+	DISTINCT c.customer_id,
+	c.first_name,
+	c.last_name
 FROM
-    sql_store.customers c
+	sql_store.customers c
 JOIN sql_store.orders o
-    USING (customer_id)
+		USING (customer_id)
 JOIN sql_store.order_items oi
-    USING (order_id)
+		USING (order_id)
 JOIN sql_store.products p
-    USING (product_id)
+		USING (product_id)
 WHERE
-    p.product_id = 3;
+	p.product_id = 3
+ORDER BY
+	customer_id;
