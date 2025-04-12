@@ -1,4 +1,4 @@
--- Select clients that have an invoice
+-- Select clients that have at least one invoice (using subquery and DISTINCT)
 SELECT
 	*
 FROM
@@ -11,7 +11,7 @@ WHERE
 			sql_invoicing.invoices
 	);
 
--- same as above
+-- Same as above, but using an INNER JOIN to find matching client_ids in both tables
 SELECT DISTINCT
 	c.*
 FROM
@@ -19,7 +19,7 @@ FROM
 JOIN sql_invoicing.invoices i
 	ON c.client_id = i.client_id;
 
--- same as above
+-- Same logic again, but using EXISTS to check for the presence of at least one invoice for each client
 SELECT
 	*
 FROM
@@ -35,7 +35,8 @@ WHERE
 	);
 
 
--- Find the products that have never been ordered
+-- Find products that have never been ordered (i.e., not present in the order_items table)
+-- This uses NOT IN with a subquery to exclude product_ids that were ordered
 SELECT
 	*
 FROM
@@ -48,17 +49,17 @@ WHERE
 			sql_store.order_items
 	);
 
+-- Same logic using NOT EXISTS instead of NOT IN, which is generally safer with NULLs
 SELECT
 	*
 FROM
 	sql_store.products p
 WHERE
-	product_id NOT EXISTS (
+	NOT EXISTS (
 		SELECT
-			product_id
+			1
 		FROM
 			sql_store.order_items oi
-		WHERE p.product_id  = oi.product_id
+		WHERE
+			p.product_id = oi.product_id
 	);
-
-
