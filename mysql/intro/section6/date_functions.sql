@@ -1,3 +1,4 @@
+-- https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html
 SELECT NOW();
 
 SELECT CURDATE();
