@@ -1,0 +1,80 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/132.0.6834.210 Electron/34.5.0 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="Ch92tOifM5wNlYnCF13e">
+    <mxGraphModel dx="1434" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-1" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-2" value="username: string&lt;div&gt;password: string&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-1">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-5" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERone;startArrow=ERmany;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="1" source="KElTiFYRoZVvDb_QEkqi-2" target="KElTiFYRoZVvDb_QEkqi-36">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="350" y="700" as="sourcePoint" />
+            <mxPoint x="450" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-6" value="belongs to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KElTiFYRoZVvDb_QEkqi-5">
+          <mxGeometry x="-0.1182" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-7" value="Customer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-8" value="first_name: string&lt;div&gt;last_name: string&lt;br&gt;&lt;div&gt;email: string&lt;/div&gt;&lt;div&gt;phone: string&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-7">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-9" value="Movie" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-10" value="barcode: string&lt;div&gt;daily_rental_rate: float&lt;/div&gt;&lt;div&gt;number_in_stock: int&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-9">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-24" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERone;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;startFill=0;" edge="1" parent="1" source="KElTiFYRoZVvDb_QEkqi-8" target="KElTiFYRoZVvDb_QEkqi-28">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="290" y="820" as="sourcePoint" />
+            <mxPoint x="361.9200000000001" y="594.78" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-25" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERone;startArrow=ERmany;rounded=0;entryX=0;entryY=0.143;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.015;exitY=0.36;exitDx=0;exitDy=0;exitPerimeter=0;startFill=0;endFill=0;" edge="1" parent="1" source="KElTiFYRoZVvDb_QEkqi-28" target="KElTiFYRoZVvDb_QEkqi-10">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="520" y="587.5" as="sourcePoint" />
+            <mxPoint x="570" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-27" value="Rental" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-28" value="rent_date: datetime&lt;div&gt;return_date: datetime&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-27">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-29" value="Coupon" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="710" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-30" value="code: string&lt;div&gt;description: string&lt;/div&gt;&lt;div&gt;discount: float&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-29">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-33" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERone;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;endFill=0;startFill=0;" edge="1" parent="1" source="KElTiFYRoZVvDb_QEkqi-30" target="KElTiFYRoZVvDb_QEkqi-28">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="560" y="910" as="sourcePoint" />
+            <mxPoint x="660" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-34" value="applied to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KElTiFYRoZVvDb_QEkqi-33">
+          <mxGeometry x="-0.0076" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-35" value="Role" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="350" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="KElTiFYRoZVvDb_QEkqi-36" value="name: string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="KElTiFYRoZVvDb_QEkqi-35">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
